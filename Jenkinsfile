@@ -7,7 +7,6 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh 'npx cypress cache prune'
             }
         }
         stage('parallel') {
