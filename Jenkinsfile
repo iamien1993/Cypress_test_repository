@@ -6,9 +6,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm ci'
-                sh 'npm run cy:verify'
-                //sh 'npm install'
+                sh 'npm install'
             }
         }
         stage('parallel') {
