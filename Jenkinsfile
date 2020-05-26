@@ -1,10 +1,12 @@
 pipeline {
     agent any
-
+    
+    tools {nodejs "node"}
+    
     stages {
         stage('build') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('parallel') {
@@ -13,17 +15,17 @@ pipeline {
                 // will use Cypress Dashboard to load balance any found spec files
                 stage('Run tests in parallel A') {
                     steps {
-                        bat 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
+                        sh 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
                     }
                 }
                 stage('Run tests in parallel B') {
                     steps {
-                        bat 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
+                        sh 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
                     }
                 }
                 stage('Run tests in parallel C') {
                     steps {
-                        bat 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
+                        sh 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
                     }
                 }
             }
