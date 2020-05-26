@@ -18,7 +18,7 @@ pipeline {
                         sh 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
                     }
                 }
-                stage('Run tests in parallel B') {
+                /*stage('Run tests in parallel B') {
                     steps {
                         sh 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
                     }
@@ -27,7 +27,7 @@ pipeline {
                     steps {
                         sh 'npx cypress run --record --key 4d33cb2e-8b03-4ee2-8815-2e55b6463f7a --parallel'
                     }
-                }
+                }*/
             }
         }
     }
